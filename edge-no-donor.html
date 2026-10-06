@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donor Declined — Blood Relay</title>
-  <meta name="description" content="The donor is unavailable — Blood Relay automatically moves to the next matching donor. Your request stays active." />
+  <title>No Donor Nearby — Blood Relay</title>
+  <meta name="description" content="No matching donor nearby yet — widen the search or alert more donors without restarting your request." />
   <meta name="theme-color" content="#DC2626" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -27,35 +27,44 @@
   <main class="page-main shell-narrow">
     <div class="state-hero">
       <span class="state-icon state-icon--muted" aria-hidden="true">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a6 6 0 0 1 6-6h1"/><path d="m16 8 5 5m0-5-5 5"/></svg>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       </span>
-      <h1 class="h-xl">Donor unavailable</h1>
-      <p class="sub center-narrow">Rahul Patel declined — likely mid-donation or out of reach. Blood Relay has automatically moved to the next matching donor.</p>
+      <h1 class="h-xl">No matching donor nearby</h1>
+      <p class="sub center-narrow">No B- donor has responded within 5 km of CityCare Hospital. Your request stays active — you don't need to start again.</p>
     </div>
 
     <section class="section">
-      <div class="next-donor-card" data-testid="next-donor-card">
-        <span class="avatar" aria-hidden="true">MS</span>
-        <div class="next-donor-copy">
-          <span class="next-donor-label">Next matching donor · notified automatically</span>
-          <p class="donor-name mt-8">Mehul Shah</p>
-          <p class="donor-meta-line">B- · 2.4 km away · <span class="badge badge--available">Available</span></p>
+      <div class="card stack-16" data-testid="next-steps-card">
+        <div class="preset-row">
+          <span class="preset-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+          </span>
+          <div>
+            <p class="preset-title">Widen the search to 10 km</p>
+            <p class="preset-meta">Re-matches your request against every compatible donor in the wider radius.</p>
+          </div>
         </div>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#94A3B8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        <div class="preset-row">
+          <span class="preset-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          </span>
+          <div>
+            <p class="preset-title">Alert more donors</p>
+            <p class="preset-meta">Pushes the request to the citywide volunteer registry and standby waitlist.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="banner banner--info" data-testid="declined-explainer">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M12 11v5"/></svg>
-      Your request is still active — the donors already notified are not disturbed.
-    </div>
-
     <section class="section">
-      <a class="btn btn--primary btn--lg btn--block" href="matching.html" data-testid="contact-next-donor-btn">
-        CONTACT NEXT DONOR
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-      </a>
-      <p class="text-center small-note mt-8">The emergency request does not restart.</p>
+      <div class="action-stack">
+        <a class="btn btn--primary btn--lg btn--block" href="matching.html" data-testid="widen-search-btn">
+          WIDEN SEARCH
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--secondary btn--lg btn--block" href="tracker.html" data-testid="alert-more-donors-btn">ALERT MORE DONORS</a>
+      </div>
+      <p class="text-center small-note mt-8">Your request details are kept — nothing is restarted.</p>
     </section>
   </main>
 
@@ -79,8 +88,8 @@
       <a href="fulfilled.html" data-testid="nav-fulfilled">Fulfilled</a>
       <span class="nav-group-label">Donor &amp; edges</span>
       <a href="donor-alert.html" data-testid="nav-donor-alert">Donor Alert</a>
-      <a href="edge-no-donor.html" data-testid="nav-edge-no-donor">No Donor Nearby</a>
-      <a href="edge-declined.html" data-testid="nav-edge-declined" class="is-here">Donor Declined <span class="nav-here-dot" aria-hidden="true"></span></a>
+      <a href="edge-no-donor.html" data-testid="nav-edge-no-donor" class="is-here">No Donor Nearby <span class="nav-here-dot" aria-hidden="true"></span></a>
+      <a href="edge-declined.html" data-testid="nav-edge-declined">Donor Declined</a>
       <a href="edge-expired.html" data-testid="nav-edge-expired">Request Expired</a>
     </nav>
   </details>
